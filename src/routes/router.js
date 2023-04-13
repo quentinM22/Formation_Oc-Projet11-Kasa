@@ -10,7 +10,6 @@ import FicheLogement from "../view/FicheLogement/FicheLogement"
 const routes = [
 	{
 		path: "/",
-		exact: true,
 		component: <Home />,
 	},
 	{
