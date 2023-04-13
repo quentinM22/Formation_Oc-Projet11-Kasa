@@ -7,12 +7,7 @@ function App() {
 	return (
 		<Routes>
 			{routes.map((route, i) => (
-				<Route
-					key={i}
-					path={route.path}
-					exact={route.exact}
-					element={<Path {...route} />}
-				/>
+				<Route key={i} path={route.path} element={<Path {...route} />} />
 			))}
 		</Routes>
 	)
