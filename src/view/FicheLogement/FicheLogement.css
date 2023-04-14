@@ -1,0 +1,63 @@
+.cmp-page-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.cmp-page-title > h1 {
+	font-weight: 500;
+	font-style: normal;
+	font-size: 36px;
+	margin-bottom: 0;
+}
+.cmp-page-title > h2 {
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	margin-top: 10px;
+}
+.cmp-page-host {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.cmp-page-host > p {
+	padding: 0 5px 0;
+	width: 70px;
+	text-align: end;
+}
+.cmp-page-host > .cmp-pics-host {
+	border-radius: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 64px;
+	width: 64px;
+}
+.cmp-tag-container {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+.cmp-tag {
+	background-color: #ff6060;
+	color: white;
+	margin-right: 10px;
+	padding: 5px 40px 5px;
+	border-radius: 10px;
+}
+.fa-star {
+	color: #e3e3e3;
+	font-size: x-large;
+	margin: 0 5px 0;
+}
+.active {
+	color: #ff6060;
+}
+.cmp-page-card-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.cmp-page-card {
+	width: calc(50% - 10px);
+}

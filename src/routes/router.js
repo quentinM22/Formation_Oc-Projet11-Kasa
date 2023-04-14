@@ -17,7 +17,7 @@ const routes = [
 		component: <About />,
 	},
 	{
-		path: "/FicheLogement",
+		path: "/FicheLogement/:id",
 		component: <FicheLogement />,
 	},
 	{

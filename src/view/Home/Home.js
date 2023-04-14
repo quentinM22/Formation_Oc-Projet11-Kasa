@@ -20,7 +20,7 @@ const Home = () => {
 				<Banner />
 				<div className="cmp-card-container">
 					{Data.map((item) => (
-						<LocationCard key={item.id} title={item.title} />
+						<LocationCard key={item.id} title={item.title} id={item.id} />
 					))}
 				</div>
 			</div>
