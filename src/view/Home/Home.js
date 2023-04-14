@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 
 import Header from "../../components/Header/Header"
 import Banner from "../../components/Banner/Banner"
-import Card from "../../components/Card/Card"
+import LocationCard from "../../components/LocationCard/LocationCard"
 import Footer from "../../components/Footer/Footer"
 
 import Data from "../../data/logements.json"
@@ -20,7 +20,7 @@ const Home = () => {
 				<Banner />
 				<div className="cmp-card-container">
 					{Data.map((item) => (
-						<Card key={item.id} title={item.title} />
+						<LocationCard key={item.id} title={item.title} />
 					))}
 				</div>
 			</div>
