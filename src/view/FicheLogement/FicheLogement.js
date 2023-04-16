@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import "../../App/App.css"
 import "./FicheLogement.css"
@@ -13,6 +13,9 @@ import Footer from "../../components/Footer/Footer"
 import AboutCard from "../../components/AboutCard/AboutCard"
 
 const FicheLogement = () => {
+	useEffect(() => {
+		document.title = `Kasa - Logement`
+	})
 	//Recuperation Data en fonction de l'id
 	const { id } = useParams()
 	const logement = Data.find((item) => item.id === id.split(":id")[1])
