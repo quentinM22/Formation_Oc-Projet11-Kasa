@@ -21,14 +21,17 @@ const FicheLogement = () => {
 	const logement = Data.find((item) => item.id === id.split(":id")[1])
 	//Rating
 	const stars = []
-	for (let i = 1; i <= 5; i++) {
-		stars.push(
-			<i
-				className={`fa-solid fa-star ${i <= logement.rating ? "active" : ""}`}
-				key={i}
-			></i>
-		)
+	if (logement) {
+		for (let i = 1; i <= 5; i++) {
+			stars.push(
+				<i
+					className={`fa-solid fa-star ${i <= logement.rating ? "active" : ""}`}
+					key={i}
+				></i>
+			)
+		}
 	}
+
 	// Gestion du rendu en fonction de l'id de l'Url
 	return !logement ? (
 		<Navigate to="/error" />
