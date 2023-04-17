@@ -8,7 +8,7 @@
 	border-radius: 20px;
 	padding: 50px 50px 0;
 }
-.cmp-card {
+.cmp-card-nocover {
 	display: flex;
 	height: 340px;
 	width: calc(33.33% - 20px);
@@ -20,6 +20,23 @@
 		#ff6060;
 	border-radius: 10px;
 	margin-bottom: 50px;
+	text-decoration: none;
+}
+.cmp-card {
+	display: flex;
+	height: 340px;
+	width: calc(33.33% - 20px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+	margin-bottom: 50px;
+	text-decoration: none;
+}
+.cmp-card-nocover:hover,
+.cmp-card:hover {
+	box-shadow: 3px 3px #ff6060;
+	transform: scale(1.01);
 }
 .cmp-card-title {
 	display: flex;
@@ -30,6 +47,10 @@
 	margin-left: 20px;
 	align-items: flex-end;
 	width: 33.3%;
+}
+.cmp-card-nocover:hover,
+.cmp-card:hover > .cmp-card-title {
+	color: #ff6060;
 }
 @media screen and (max-width: 767px) {
 	.cmp-card-container {

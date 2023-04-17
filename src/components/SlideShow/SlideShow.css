@@ -36,3 +36,8 @@
 	color: #ff6060;
 	cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+	.cmp-count-pics {
+		display: none;
+	}
+}

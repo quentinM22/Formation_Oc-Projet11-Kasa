@@ -19,17 +19,19 @@ const SlideShow = (props) => {
 				className="cmp-carousel"
 			>
 				<div>
-					<div className="cmp-btn-carousel">
-						<i
-							className="fa-solid fa-chevron-left "
-							onClick={handleDecrement}
-						></i>
-						<i
-							className="fa-solid fa-chevron-right"
-							onClick={handleIncrement}
-						></i>
-					</div>
-					<p>
+					{props.picture.length > 1 ? (
+						<div className="cmp-btn-carousel">
+							<i
+								className="fa-solid fa-chevron-left "
+								onClick={handleDecrement}
+							></i>
+							<i
+								className="fa-solid fa-chevron-right"
+								onClick={handleIncrement}
+							></i>
+						</div>
+					) : null}
+					<p className="cmp-count-pics">
 						{count + 1} / {props.picture.length}
 					</p>
 				</div>
