@@ -4,7 +4,6 @@
 	border-radius: 25px;
 	display: flex;
 	align-items: center;
-	/* flex-direction: column; */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -33,10 +32,17 @@
 	padding: 0 10px 0;
 }
 .cmp-carousel > div > .cmp-btn-carousel > i:hover {
-	color: #ff6060;
+	color: var(--primary);
 	cursor: pointer;
 }
 @media screen and (max-width: 767px) {
+	.cmp-carousel {
+		height: 255px;
+	}
+	.cmp-carousel > div > .cmp-btn-carousel > i {
+		font-size: 25px;
+		cursor: pointer;
+	}
 	.cmp-count-pics {
 		display: none;
 	}

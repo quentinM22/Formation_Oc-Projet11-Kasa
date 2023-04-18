@@ -5,12 +5,13 @@
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	background-color: #ff6060;
+	background-color: var(--primary);
 	color: white;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 10px;
 	margin: 20px 0 0;
 	z-index: 1;
+	cursor: pointer;
 }
 .cmp-AboutCard-description {
 	position: relative;
@@ -30,5 +31,11 @@
 @media screen and (max-width: 767px) {
 	.cmp-about-card-container {
 		margin: 0;
+	}
+	.cmp-AboutCard-btn {
+		font-size: 13px;
+	}
+	.cmp-AboutCard-description {
+		font-size: 12px;
 	}
 }

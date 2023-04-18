@@ -12,9 +12,9 @@ const About = () => {
 		document.title = `Kasa - A propos`
 	})
 	return (
-		<div>
+		<>
+			<Header />
 			<div className="cmp-body">
-				<Header />
 				<Banner />
 				<div className="cmp-about-card-container">
 					{Data.map((item, index) => (
@@ -27,7 +27,7 @@ const About = () => {
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	)
 }
 

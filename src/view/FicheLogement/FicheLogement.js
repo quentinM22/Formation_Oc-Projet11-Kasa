@@ -36,45 +36,45 @@ const FicheLogement = () => {
 	return !logement ? (
 		<Navigate to="/error" />
 	) : (
-		<div>
+		<>
+			<Header />
 			<div className="cmp-body">
-				<Header />
 				<div>
 					<SlideShow picture={logement.pictures} />
 					<div className="cmp-page-head">
 						<div className="cmp-page-title">
 							<h1>{logement.title}</h1>
 							<h2>{logement.location}</h2>
+							<div className="cmp-tag-container">
+								{logement.tags.map((tag) => (
+									<div className="cmp-tag" key={tag}>
+										{tag}
+									</div>
+								))}
+							</div>
 						</div>
-						<div className="cmp-page-host">
-							<p>{logement.host.name}</p>
-							{logement.host.picture ? (
-								<div
-									className="cmp-pics-host"
-									style={{
-										backgroundImage: `url(${logement.host.picture})`,
-									}}
-								/>
-							) : (
-								<div
-									className="cmp-pics-host"
-									style={{
-										backgroundColor: "grey",
-									}}
-								/>
-							)}
-						</div>
-					</div>
-					<div className="cmp-page-head">
-						<div className="cmp-tag-container">
-							{logement.tags.map((tag) => (
-								<div className="cmp-tag" key={tag}>
-									{tag}
-								</div>
-							))}
-						</div>
-						<div>
-							<div className="star-rating">{stars}</div>
+						<div className="cmp-page-rigth">
+							<div className="cmp-page-host">
+								<p>{logement.host.name}</p>
+								{logement.host.picture ? (
+									<div
+										className="cmp-pics-host"
+										style={{
+											backgroundImage: `url(${logement.host.picture})`,
+										}}
+									/>
+								) : (
+									<div
+										className="cmp-pics-host"
+										style={{
+											backgroundColor: "grey",
+										}}
+									/>
+								)}
+							</div>
+							<div>
+								<div className="star-rating">{stars}</div>
+							</div>
 						</div>
 					</div>
 					<div className="cmp-page-card-container">
@@ -92,7 +92,7 @@ const FicheLogement = () => {
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	)
 }
 

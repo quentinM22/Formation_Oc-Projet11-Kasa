@@ -1,44 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
+:root {
+	--primary: #ff6060;
+}
+html,
 body {
 	margin: 0;
 	padding: 0;
 	font-family: "Montserrat", sans-serif;
-	color: #ff6060;
+	color: var(--primary);
 	font-weight: 500;
 }
+#root {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	min-height: 100vh;
+}
 .cmp-body {
+	/* min-height: 70vh; */
+	padding-bottom: 50px;
 	margin: 0 50px 0;
 }
-/* Error Page */
-.cmp-error-body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-}
-.cmp-error-body > .cmp-error-title {
-	margin: 0;
-	font-size: 288px;
-	font-weight: 700;
-	text-shadow: 1px 1px #582020;
-}
-.cmp-error-body > .cmp-error-subtitle {
-	margin: 60px 0 60px;
-	font-weight: 700;
-}
-.cmp-error-body > a {
-	margin: 100px 0 150px;
-	color: #ff6060;
-}
+
 @media screen and (max-width: 767px) {
 	.cmp-body {
 		margin: 0 20px 0;
-	}
-	/* Error Page */
-	.cmp-error-body > .cmp-error-title {
-		font-size: calc(288px / 2);
 	}
 }

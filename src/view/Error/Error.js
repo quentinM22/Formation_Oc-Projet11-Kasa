@@ -3,16 +3,16 @@ import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import { Link } from "react-router-dom"
 import { routes } from "../../routes/router"
-
+import "./Error.css"
 function Error() {
 	// Changement title onglet page
 	useEffect(() => {
 		document.title = `Kasa - Error ❌`
 	})
 	return (
-		<div>
+		<>
+			<Header />
 			<div className="cmp-body">
-				<Header />
 				<div className="cmp-error-body">
 					<h1 className="cmp-error-title">404</h1>
 					<h2 className="cmp-error-subtitle">
@@ -22,7 +22,7 @@ function Error() {
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	)
 }
 

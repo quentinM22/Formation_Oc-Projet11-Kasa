@@ -14,18 +14,23 @@ const Home = () => {
 	})
 
 	return (
-		<div>
+		<>
+			<Header />
 			<div className="cmp-body">
-				<Header />
 				<Banner />
 				<div className="cmp-card-container">
 					{Data.map((item) => (
-						<LocationCard key={item.id} title={item.title} id={item.id} />
+						<LocationCard
+							key={item.id}
+							title={item.title}
+							id={item.id}
+							picture={item.cover}
+						/>
 					))}
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	)
 }
 

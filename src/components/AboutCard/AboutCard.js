@@ -16,8 +16,8 @@ const AboutCard = (props) => {
 					<div className="cmp-AboutCard-description">{props.description}</div>
 				) : (
 					<ul className="cmp-AboutCard-description">
-						{props.list.map((item) => (
-							<li>{item}</li>
+						{props.list.map((item, index) => (
+							<li key={index}>{item}</li>
 						))}
 					</ul>
 				))}
