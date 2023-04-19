@@ -1,24 +1,38 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import "../../App/App.css"
 import "./FicheLogement.css"
 
 import { Navigate, useParams } from "react-router-dom"
 
-import Data from "../../data/logements.json"
+// import Data from "../../data/logements.json"
 
 import SlideShow from "../../components/SlideShow/SlideShow"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import AboutCard from "../../components/AboutCard/AboutCard"
+import Loading from "../../components/Loading/Loading"
 
 const FicheLogement = () => {
+	const [logements, setLogements] = useState([])
+	const [isLoading, setIsLoading] = useState(true)
+	const getData = async () => {
+		await fetch("../../../data/logements.json")
+			.then((res) => {
+				return res.json()
+			})
+			.then((data) => {
+				setLogements(data)
+			})
+			.catch((err) => console.error(err))
+	}
 	useEffect(() => {
-		document.title = `Kasa - Logement`
-	})
+		document.title = `Kasa - Accueil`
+		getData()
+	}, [])
 	//Recuperation Data en fonction de l'id
 	const { id } = useParams()
-	const logement = Data.find((item) => item.id === id.split(":id")[1])
+	const logement = logements.find((item) => item.id === id.split(":id")[1])
 	//Rating
 	const stars = []
 	if (logement) {
@@ -32,8 +46,18 @@ const FicheLogement = () => {
 		}
 	}
 
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false)
+		}, 1500)
+
+		return () => clearTimeout(timer)
+	}, [])
+
 	// Gestion du rendu en fonction de l'id de l'Url
-	return !logement ? (
+	return logements.length === 0 || isLoading ? (
+		<Loading />
+	) : !logement ? (
 		<Navigate to="/error" />
 	) : (
 		<>
