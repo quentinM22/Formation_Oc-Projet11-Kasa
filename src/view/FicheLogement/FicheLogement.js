@@ -50,11 +50,13 @@ const FicheLogement = () => {
 		document.title = `Kasa - Chargement`
 		const timer = setTimeout(() => {
 			setIsLoading(false)
-			document.title = `Kasa - ${logement.title}`
+			if (logement) {
+				document.title = `Kasa - ${logement.title}`
+			}
 		}, 1500)
 
 		return () => clearTimeout(timer)
-	})
+	}, [logement])
 
 	// Gestion du rendu en fonction de l'id de l'Url
 	return logements.length === 0 || isLoading ? (
