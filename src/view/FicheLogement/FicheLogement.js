@@ -47,12 +47,14 @@ const FicheLogement = () => {
 	}
 
 	useEffect(() => {
+		document.title = `Kasa - Chargement`
 		const timer = setTimeout(() => {
 			setIsLoading(false)
+			document.title = `Kasa - ${logement.title}`
 		}, 1500)
 
 		return () => clearTimeout(timer)
-	}, [])
+	})
 
 	// Gestion du rendu en fonction de l'id de l'Url
 	return logements.length === 0 || isLoading ? (

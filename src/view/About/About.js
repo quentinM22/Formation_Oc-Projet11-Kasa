@@ -4,9 +4,14 @@ import Banner from "../../components/Banner/Banner"
 import Footer from "../../components/Footer/Footer"
 
 import AboutCard from "../../components/AboutCard/AboutCard"
-
+/**
+ * Pages About
+ * @returns view/About
+ */
 const About = () => {
 	const [about, setAbout] = useState([])
+	// Fetch data public/data
+	// data = about > setAbout(data)
 	const getData = async () => {
 		await fetch("data/about.json")
 			.then((res) => {
@@ -17,6 +22,8 @@ const About = () => {
 			})
 			.catch((err) => console.error(err))
 	}
+	// Changement title onglet
+	// Initialisation de getData (fetch)
 	useEffect(() => {
 		document.title = `Kasa - A propos`
 		getData()
