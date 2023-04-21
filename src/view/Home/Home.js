@@ -5,7 +5,15 @@ import Banner from "../../components/Banner/Banner"
 import LocationCard from "../../components/LocationCard/LocationCard"
 import Footer from "../../components/Footer/Footer"
 
+/**
+ * View pages Accueil
+ *
+ * @returns  {JSX.Element} - Template page d'accueil
+ * @author Quentin
+ * @version 1.0
+ */
 const Home = () => {
+	// Fonction pour récupérer les données des logements depuis un fichier JSON
 	const [logements, setLogements] = useState([])
 	const getData = async () => {
 		await fetch("data/logements.json")
@@ -17,10 +25,12 @@ const Home = () => {
 			})
 			.catch((err) => console.error(err))
 	}
+	// Chargement des données et générer title
 	useEffect(() => {
 		document.title = `Kasa - Accueil`
 		getData()
 	}, [])
+	// Rendu du composant
 	return (
 		<>
 			<Header />

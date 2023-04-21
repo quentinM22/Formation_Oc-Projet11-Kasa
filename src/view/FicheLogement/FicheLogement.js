@@ -5,17 +5,24 @@ import "./FicheLogement.css"
 
 import { Navigate, useParams } from "react-router-dom"
 
-// import Data from "../../data/logements.json"
-
 import SlideShow from "../../components/SlideShow/SlideShow"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import AboutCard from "../../components/AboutCard/AboutCard"
 import Loading from "../../components/Loading/Loading"
 
+/**
+ * View pages fiche Logement
+ *
+ * @returns  {JSX.Element} - Template page d'un logement ou Pages Erreur
+ * @author Quentin
+ * @version 1.0
+ */
 const FicheLogement = () => {
+	// Déclaration des états
 	const [logements, setLogements] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
+	// Fonction pour récupérer les données des logements depuis un fichier JSON
 	const getData = async () => {
 		await fetch("../../../data/logements.json")
 			.then((res) => {
@@ -26,14 +33,14 @@ const FicheLogement = () => {
 			})
 			.catch((err) => console.error(err))
 	}
+	// Chargement des données
 	useEffect(() => {
-		document.title = `Kasa - Accueil`
 		getData()
 	}, [])
-	//Recuperation Data en fonction de l'id
+	// Récupération de l'ID du logement à partir de l'URL
 	const { id } = useParams()
 	const logement = logements.find((item) => item.id === id.split(":id")[1])
-	//Rating
+	// Génération des étoiles de notation
 	const stars = []
 	if (logement) {
 		for (let i = 1; i <= 5; i++) {
@@ -45,7 +52,8 @@ const FicheLogement = () => {
 			)
 		}
 	}
-
+	// Générer page de chargement
+	// Générer title en fonction de l'état
 	useEffect(() => {
 		document.title = `Kasa - Chargement`
 		const timer = setTimeout(() => {
@@ -57,8 +65,7 @@ const FicheLogement = () => {
 
 		return () => clearTimeout(timer)
 	}, [logement])
-
-	// Gestion du rendu en fonction de l'id de l'Url
+	// Rendu du composant
 	return logements.length === 0 || isLoading ? (
 		<Loading />
 	) : !logement ? (

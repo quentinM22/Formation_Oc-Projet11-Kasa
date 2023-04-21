@@ -4,11 +4,20 @@ import Footer from "../../components/Footer/Footer"
 import { Link } from "react-router-dom"
 import { routes } from "../../routes/router"
 import "./Error.css"
+
+/**
+ * View pages Error404
+ *
+ * @returns  {JSX.Element} - Template page Erreur
+ * @author Quentin
+ * @version 1.0
+ */
 function Error() {
-	// Changement title onglet page
+	// Générer title onglet page
 	useEffect(() => {
 		document.title = `Kasa - Error ❌`
 	})
+	// Rendu du composant
 	return (
 		<>
 			<Header />

@@ -5,7 +5,16 @@ import "./Header.css"
 
 import Logo from "../../assets/images/Logo.png"
 
+/**
+ * Component Header
+ * Avec <nav></nav> navigation du site
+ *
+ * @returns {JSX.Element} - Component header
+ * @author Quentin
+ * @version 1.0
+ */
 const Header = () => {
+	// Rendu du composant
 	return (
 		<>
 			<header>

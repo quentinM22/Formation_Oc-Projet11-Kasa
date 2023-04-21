@@ -2,7 +2,16 @@ import React from "react"
 import "./LocationCard.css"
 import { Link } from "react-router-dom"
 import { routes } from "../../routes/router"
+/**
+ * Component LocationCard
+ *
+ * @param {*} props
+ * @returns {JSX.Element} - Component LocationCard
+ * @author Quentin
+ * @version 1.0
+ */
 const LocationCard = (props) => {
+	// Rendu du composant
 	return (
 		<>
 			{props.picture ? (

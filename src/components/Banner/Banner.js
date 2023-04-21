@@ -6,12 +6,20 @@ import imgBg2 from "../../assets/images/kalen-emsley-Bkci_8qcdvQ-unsplash.jpg"
 
 import "../Banner/Banner.css"
 
+/**
+ * Component banner
+ *
+ * @returns {JSX.Element} - Component
+ * @author Quentin
+ * @version 1.0
+ */
 const Banner = () => {
+	// Récupération Url dans variable location
 	const location = useLocation()
-
+	// Varibles initialisé
 	let imageSource = ""
 	let titleBanner = ""
-	// Changement image Banner en fonction de l'url
+	// Changement images Banner en fonction de l'url
 	if (location.pathname === "/") {
 		imageSource = imgBg1
 		titleBanner = "block"
@@ -19,7 +27,7 @@ const Banner = () => {
 		imageSource = imgBg2
 		titleBanner = "none"
 	}
-
+	// Rendu du composant
 	return (
 		<div
 			className="cmp-banner"
